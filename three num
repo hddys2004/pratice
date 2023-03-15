@@ -1,0 +1,33 @@
+//题目：有1、2、3、4个数字，能组成多少个
+//互不相同且无重复数字的三位数？都是多少哦？
+//已知：三位数，1-4，各不相同。
+//输出：1、有多少个这样的三位数 2、依次输出
+//思路：三位数
+//个位  units digit
+//十位  tens digit
+//百位  hundreds digit
+//units 单位 1 
+#include <iostream>
+using namespace std;
+int main()
+{
+	int units;//个位
+	int tens;//十位
+	int hundreds;//百位
+	int count = 0;//count 最终数量
+	for (hundreds = 1; hundreds < 5; hundreds++) //限制数在1-4之间
+	{
+		for (tens = 1; tens < 5; tens++) //同上
+		{
+			for (units = 1; units < 5; units++)//同上
+			{
+				if (hundreds!=tens&&hundreds!=units&&tens!=units) //限制互不相同
+				{
+					cout << hundreds << tens << units << endl;//输出个十百
+				}
+				count++;
+				
+			}
+		}
+	}cout << "count=" <<count<< endl;
+}
