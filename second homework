@@ -1,0 +1,32 @@
+//创建一个圆类(Circle)
+//其数据成员有半径r
+//成员函数有计算面积的getArea()函数
+//要求如下:
+//1、定义一个带参的构造函数初始化半径r
+//2、定义一个无参的构造函数，初始化半径为10
+//3、创建一个Circle类的对象c1，将其半径初始化为100，调用getArea)
+//函数计算其面积并输出。创建一个Circle类的对象c1，初始化对象为10，
+//计算器面积并输出
+#include<iostream>
+#define Pi 3.14
+using namespace std;
+class Circle {
+public:
+    Circle(float r) { radius = r; }
+    float getArea();
+private:
+    double radius;
+};
+
+float Circle::getArea() {
+    return Pi * radius * radius;
+}
+
+int main()
+{
+    float r=10;
+    Circle C1(r);
+    float area = C1.getArea();
+    cout << "面积为：" << area << endl;
+
+}
